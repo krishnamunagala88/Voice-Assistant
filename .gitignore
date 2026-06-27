@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.venv/
+venv/
+ENV/
+.env
+.env.*
+.pytest_cache/
+.mypy_cache/
+
+# Project data / runtime
+backend/logs/
+backend/data/faiss_index/
+backend/data/assistant_id.txt
+backend/credentials/*.json
+backend/.python-version
+
+# Editors
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

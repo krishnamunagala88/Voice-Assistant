@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Handa Aesthetics and Plastics — AI Receptionist</title>
+  <meta name="description"
+    content="Handa Aesthetics and Plastics AI-powered voice receptionist. Book appointments, inquire about services, and get clinic information instantly." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+  <!-- Animated background particles -->
+  <div class="bg-particles" aria-hidden="true">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <div class="logo">
+        <div class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="20" fill="url(#logoGrad)" />
+            <path d="M20 10v20M10 20h20" stroke="white" stroke-width="3" stroke-linecap="round" />
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40">
+                <stop offset="0%" stop-color="#3b82f6" />
+                <stop offset="100%" stop-color="#06b6d4" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Clinics Name</span>
+          <!-- <span class="logo-sub">Clinic</span> -->
+        </div>
+      </div>
+      <nav class="header-nav" aria-label="Main navigation">
+        <span class="nav-badge" id="statusBadge">
+          <span class="status-dot" id="statusDot"></span>
+          <span id="statusText">Connecting...</span>
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="main-content" role="main">
+
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-content">
+        <div class="hero-tag">🤖 AI-Powered Voice Receptionist</div>
+        <h1 id="heroTitle" class="hero-title">
+          Your Health,<br />
+          <span class="gradient-text">Our Priority</span>
+        </h1>
+        <p class="hero-subtitle">
+          Talk to Sarah, our AI receptionist — book appointments, learn about our services,
+          and get instant answers, 24/7.
+        </p>
+
+        <!-- ACTION BUTTONS ROW -->
+        <div class="action-buttons-row">
+
+          <!-- CALL BUTTON -->
+          <div class="call-section">
+            <div class="call-ring-outer" id="callRingOuter" aria-hidden="true"></div>
+            <div class="call-ring-inner" id="callRingInner" aria-hidden="true"></div>
+            <button class="call-button" id="callButton" aria-label="Start voice call with AI receptionist"
+              title="Click to call our AI receptionist Sarah">
+              <div class="call-button-icon" id="callIcon">
+                <svg id="phoneIcon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                  <path
+                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                    fill="currentColor" />
+                </svg>
+                <svg id="endIcon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                  style="display:none">
+                  <path
+                    d="M12 9c-1.6 0-3.15.25-4.6.72v3.1c0 .39-.23.74-.56.9-.98.49-1.87 1.12-2.66 1.85-.18.18-.43.28-.7.28-.28 0-.53-.11-.71-.29L.29 13.08c-.18-.17-.29-.42-.29-.7 0-.28.11-.53.29-.71C3.34 8.78 7.46 7 12 7s8.66 1.78 11.71 4.67c.18.18.29.43.29.71 0 .28-.11.53-.29.71l-2.48 2.48c-.18.18-.43.29-.71.29-.27 0-.52-.1-.7-.28-.79-.74-1.69-1.36-2.67-1.85-.33-.16-.56-.5-.56-.9v-3.1C15.15 9.25 13.6 9 12 9z"
+                    fill="currentColor" />
+                </svg>
+              </div>
+              <span class="call-button-label" id="callLabel">Call Now</span>
+            </button>
+            <p class="call-hint" id="callHint">Click to speak with Sarah, our AI receptionist</p>
+          </div>
+
+          <!-- DIVIDER -->
+          <div class="action-divider" aria-hidden="true">or</div>
+
+          <!-- CHAT BUTTON -->
+          <div class="chat-section">
+            <button class="chat-button" id="chatButton" aria-label="Open chat with AI receptionist"
+              title="Chat with Sarah">
+              <div class="chat-button-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" fill="currentColor" />
+                </svg>
+              </div>
+              <span class="chat-button-label">Chat Now</span>
+            </button>
+            <p class="chat-hint">Type your question — instant text replies</p>
+          </div>
+
+        </div>
+
+        <!-- Call status -->
+        <div class="call-status-container" id="callStatusContainer" aria-live="polite">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- Hero visual -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-card">
+          <div class="visual-avatar">
+            <div class="avatar-ring"></div>
+            <div class="avatar-inner">
+              <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="30" cy="22" r="12" fill="url(#avatarGrad)" opacity="0.9" />
+                <ellipse cx="30" cy="50" rx="20" ry="12" fill="url(#avatarGrad)" opacity="0.7" />
+                <defs>
+                  <linearGradient id="avatarGrad" x1="0" y1="0" x2="60" y2="60">
+                    <stop offset="0%" stop-color="#3b82f6" />
+                    <stop offset="100%" stop-color="#06b6d4" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="avatar-status-dot"></div>
+          </div>
+          <div class="visual-info">
+            <p class="visual-name">Sarah</p>
+            <p class="visual-role">AI Receptionist</p>
+            <div class="visual-wave" id="visualWave">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+        <div class="visual-stats">
+          <div class="stat-chip">🕘 Mon–Sat 9AM–7PM</div>
+          <div class="stat-chip">📅 Book Appointments</div>
+          <div class="stat-chip">💊 8 Specialties</div>
+          <div class="stat-chip">🚨 Emergency Line Available</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Transcript Panel -->
+    <section class="transcript-section" id="transcriptSection" aria-labelledby="transcriptTitle" style="display:none">
+      <div class="section-header">
+        <h2 id="transcriptTitle" class="section-title">Live Conversation</h2>
+        <button class="clear-btn" id="clearTranscript" aria-label="Clear transcript">Clear</button>
+      </div>
+      <div class="transcript-box" id="transcriptBox" role="log" aria-live="polite" aria-atomic="false">
+        <div class="transcript-empty">Conversation will appear here...</div>
+      </div>
+    </section>
+
+    <!-- Info Cards Row -->
+    <section class="info-section" aria-labelledby="infoTitle">
+      <h2 id="infoTitle" class="section-title-center">Why Choose Handa Aesthetics and Plastics?</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-icon">🏥</div>
+          <h3>8 Specialties</h3>
+          <p>General Medicine, Cardiology, Pediatrics, Orthopedics, Gynecology, Dermatology, Ophthalmology & ENT</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">👨‍⚕️</div>
+          <h3>Expert Doctors</h3>
+          <p>8 experienced specialists with an average of 11+ years of practice across all departments</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">🔬</div>
+          <h3>Modern Diagnostics</h3>
+          <p>In-house lab, digital X-ray, ultrasound, ECG & Echo — results available within 24 hours online</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">🛡️</div>
+          <h3>Insurance Friendly</h3>
+          <p>Accepts Star Health, HDFC ERGO, New India Assurance, United India, Medi Assist & more</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">🕐</div>
+          <h3>Extended Hours</h3>
+          <p>Open Mon–Fri 9AM–7PM, Sat 9AM–4PM. Emergency hotline available 24/7</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <h3>Easily Accessible</h3>
+          <p>42 Wellness Avenue, Health District, Hyderabad. Free parking for 50 vehicles</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Admin Panel (collapsible) -->
+    <section class="admin-section" aria-labelledby="adminTitle">
+      <details class="admin-details" id="adminPanel">
+        <summary class="admin-summary" id="adminTitle">
+          <span>⚙️ Admin — Upload Clinic Documents</span>
+          <span class="summary-arrow">▾</span>
+        </summary>
+        <div class="admin-content">
+          <p class="admin-desc">
+            Upload additional <code>.txt</code> files to expand the AI's clinic knowledge base.
+            The assistant will automatically learn from the new content.
+          </p>
+          <div class="upload-zone" id="uploadZone" role="region" aria-label="File upload area">
+            <div class="upload-icon">📄</div>
+            <p>Drag & drop <code>.txt</code> files here, or</p>
+            <label class="upload-label" for="fileInput">Browse Files</label>
+            <input type="file" id="fileInput" accept=".txt" multiple aria-label="Select text files to upload" />
+            <p class="upload-hint">Supported format: .txt only</p>
+          </div>
+          <div id="uploadStatus" class="upload-status" role="status" aria-live="polite"></div>
+
+          <!-- RAG Query Tester -->
+          <div class="query-tester">
+            <h3 class="query-title">🔍 Test Knowledge Base</h3>
+            <div class="query-input-row">
+              <input type="text" id="queryInput" class="query-input" placeholder="Ask something about the clinic..."
+                aria-label="Query the clinic knowledge base" />
+              <button class="query-btn" id="queryBtn" aria-label="Submit query">Ask</button>
+            </div>
+            <div id="queryResult" class="query-result" role="region" aria-live="polite"></div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">Handa Aesthetics and Plastics</span>
+        <span class="footer-tagline">Your Health, Our Priority</span>
+      </div>
+      <div class="footer-links">
+        <span>📍 123 Healthcare Ave, Delhi</span>
+        <span>📞 +91-40-9999-0000</span>
+        <span>📧 contact@handaplasticsurgery.in</span>
+      </div>
+      <p class="footer-copy">© 2024 Handa Aesthetics and Plastics. AI Receptionist powered by VAPI.</p>
+    </div>
+  </footer>
+
+  <!-- ── Floating Chat Widget ──────────────────────────────────────── -->
+  <div class="chat-widget" id="chatWidget" role="dialog" aria-label="Chat with Sarah" aria-hidden="true">
+    <!-- Header -->
+    <div class="chat-widget-header">
+      <div class="chat-widget-avatar">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" fill="currentColor" />
+        </svg>
+      </div>
+      <div class="chat-widget-title">
+        <span class="chat-widget-name">Sarah</span>
+        <span class="chat-widget-status" id="chatWidgetStatus">
+          <span class="chat-online-dot"></span> Online
+        </span>
+      </div>
+      <button class="chat-widget-close" id="chatWidgetClose" aria-label="Close chat">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Messages -->
+    <div class="chat-messages" id="chatMessages" role="log" aria-live="polite" aria-atomic="false">
+      <!-- Greeting injected by JS -->
+    </div>
+
+    <!-- Typing indicator -->
+    <div class="chat-typing" id="chatTyping" aria-hidden="true" style="display:none">
+      <span class="typing-dot"></span>
+      <span class="typing-dot"></span>
+      <span class="typing-dot"></span>
+    </div>
+
+    <!-- Input row -->
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" class="chat-input" placeholder="Type a message..."
+        aria-label="Type your message to Sarah" maxlength="500" autocomplete="off" />
+      <button class="chat-send-btn" id="chatSendBtn" aria-label="Send message">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- App (ESM module — imports VAPI SDK internally) -->
+  <script type="module" src="/static/app.js"></script>
+</body>
+
+</html>

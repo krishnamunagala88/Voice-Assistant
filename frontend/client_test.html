@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elite Aesthetics Spa & Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e293b;
+      --accent: #b45309;
+      --bg: #fafaf9;
+      --text: #334155;
+      --card-bg: #ffffff;
+      --border: #f1f0ee;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 250, 249, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      margin-left: 32px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 100px 0;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #64748b;
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--primary);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 99px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 48px;
+      color: var(--primary);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    footer {
+      background: var(--primary);
+      color: #94a3b8;
+      padding: 60px 0;
+      margin-top: 100px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer p {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <div class="logo">Elite Aesthetics</div>
+      <nav>
+        <a href="#services">Treatments</a>
+        <a href="#about">Our Clinic</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="container">
+    <section class="hero">
+      <h1>Reveal Your Natural Radiance</h1>
+      <p>Discover personalized skincare therapies and non-invasive cosmetic treatments curated by our medical experts in a serene sanctuary.</p>
+      <a href="#services" class="btn-primary">Explore Treatments</a>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="services" class="services">
+      <h2 class="section-title">Our Premium Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Facial Rejuvenation</h3>
+          <p>Custom chemical peels, microdermabrasion, and laser therapy designed to restore texture, elasticity, and glow.</p>
+        </div>
+        <div class="service-card">
+          <h3>Injectables & Dermal Fillers</h3>
+          <p>Targeted treatments to smooth fine lines, soften wrinkles, and contour natural facial structures with minimal downtime.</p>
+        </div>
+        <div class="service-card">
+          <h3>Skin Care Consultations</h3>
+          <p>Receive a comprehensive diagnostic review and personal routine mapping from certified dermatologists.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Elite Aesthetics Spa. All rights reserved.</p>
+      <p>This is a simulated client website verifying widget embedding.</p>
+    </div>
+  </footer>
+
+  <!-- ── CLIENT WIDGET INTEGRATION SNIPPET START ── -->
+  <!-- 
+    Instructions for clients:
+    1. Copy and paste the div and script tags below before the closing </body> tag.
+    2. Replace the data-backend-url with your actual server domain.
+  -->
+  <div id="clinic-ai-widget" 
+       data-backend-url="http://localhost:8000"
+       data-assistant-name="Sarah"
+       data-assistant-role="AI Receptionist">
+  </div>
+  <script src="/static/widget.js" defer></script>
+  <!-- ── CLIENT WIDGET INTEGRATION SNIPPET END ── -->
+
+</body>
+</html>
